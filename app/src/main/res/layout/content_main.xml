@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#e0ffff"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.hfad.schedule_maker.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reset"
+                android:id="@+id/button"
+                android:layout_margin="5dp"
+                android:background="@drawable/buttons"
+                android:textColor="#ffffff"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:onClick="clear"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="next"
+                android:id="@+id/button1"
+                android:layout_margin="5dp"
+                android:background="@drawable/buttons"
+                android:textColor="#ffffff"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:onClick="makeSchedules"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+ course"
+                android:id="@+id/button4"
+                android:background="@drawable/buttons"
+                android:textColor="#ffffff"
+                android:padding="10dp"
+                android:onClick="addCourse"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:fillViewport="false">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/allCourses">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#bbffff">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="  Course name: "
+                            android:id="@+id/textView" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/editText"
+                            android:layout_weight="1" />
+
+                        <Button
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:id="@+id/button12"
+                            android:textColor="#ffffff"
+                            android:background="@drawable/closebutton"
+                            android:onClick="remove"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/allSections">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#00ced1"
+                            android:layout_margin="10dp"
+                            android:id="@+id/section">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="  Section"
+                                    android:id="@+id/textView6" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/editText6"
+                                    android:layout_weight="1" />
+
+                                <Button
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:id="@+id/button13"
+                                    android:textColor="#ffffff"
+                                    android:background="@drawable/closebutton"
+                                    android:onClick="remove"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="  Time: "
+                                    android:id="@+id/textView2" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/editText2"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text=" - "
+                                    android:id="@+id/textView3" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/editText3"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal">
+
+                                <CheckBox
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="M"
+                                    android:id="@+id/checkBox"
+                                    android:checked="false"
+                                    android:layout_weight="1" />
+                                <CheckBox
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="T"
+                                    android:id="@+id/checkBox2"
+                                    android:checked="false"
+                                    android:layout_weight="1" />
+                                <CheckBox
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="W"
+                                    android:id="@+id/checkBox3"
+                                    android:checked="false"
+                                    android:layout_weight="1" />
+                                <CheckBox
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="T"
+                                    android:id="@+id/checkBox4"
+                                    android:checked="false"
+                                    android:layout_weight="1" />
+                                <CheckBox
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="F"
+                                    android:id="@+id/checkBox5"
+                                    android:checked="false"
+                                    android:layout_weight="1" />
+                                <CheckBox
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="S"
+                                    android:id="@+id/checkBox6"
+                                    android:checked="false"
+                                    android:layout_weight="1" />
+                                <CheckBox
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="S"
+                                    android:id="@+id/checkBox7"
+                                    android:checked="false"
+                                    android:layout_weight="1" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+ section"
+                        android:id="@+id/button3"
+                        android:background="@drawable/buttons"
+                        android:layout_margin="10dp"
+                        android:textColor="#ffffff"
+                        android:padding="10dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</RelativeLayout>
